@@ -73,31 +73,32 @@ function coinChange(amt){
     let dimeCount = 0
     let Ncount = 0
     let Pcount = 0
-    let copy = amt
-    while(copy >= 100){
-        copy -= 100
+    while(amt >= 100){
+        amt -= 100
         Dcount++
     }
-    while(copy >= 25){
-        copy -= 25
+    while(amt >= 25){
+        amt -= 25
         Qcount++
     }
-    while(copy >= 10){
-        copy -= 10
+    while(amt >= 10){
+        amt -= 10
         dimeCount++
     }
-    while(copy >= 5){
-        copy -= 5
+    while(amt >= 5){
+        amt -= 5
         Ncount++
     }
-    while(copy >= 1){
-        copy -= 1
+    while(amt >= 1){
+        amt -= 1
         Pcount++
     }
     return {"dollars": Dcount, "quarters": Qcount, "dimes": dimeCount, "nickels": Ncount, "pennies": Pcount}
 }
 
-// console.log(coinChange(1793))
+var amt = 1793
+console.log(coinChange(amt))
+console.log(amt)
 
 let users = [
     {
